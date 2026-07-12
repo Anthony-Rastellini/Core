@@ -1,6 +1,6 @@
-class Platformer extends Phaser.Scene {
+class StartScreen extends Phaser.Scene {
     constructor() {
-        super("platformerScene");
+        super("startScene");
     }
 
     init() {
@@ -13,11 +13,10 @@ class Platformer extends Phaser.Scene {
 
     create() {
     //normal code
-    this.add.text(100, 100, "Starting"), {
+    this.add.text(100, 100, "Started", {
         fontSize: "16px",
         color: "#ffffff"
-    }
-
+    })
     }
 
     update() {

@@ -17,9 +17,9 @@ let config = {
             }
         }
     },
-    width: //put width of map,
-    height: //put height of map,
-    scene: [Platformer]
+    width: 800, //put width of map,
+    height: 600, //put height of map,
+    scene: [StartScreen, Platformer]
 }
 
 var cursors;
