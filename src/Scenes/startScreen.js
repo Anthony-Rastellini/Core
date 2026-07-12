@@ -13,9 +13,9 @@ class StartScreen extends Phaser.Scene {
 
     create() {
     //normal code
-    this.add.text(100, 100, "Started", {
+    this.add.text(100, 100, "Core", {
         fontSize: "16px",
-        color: "#ffffff"
+        color: "#84a5ed"
     })
     }
 

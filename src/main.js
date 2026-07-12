@@ -4,9 +4,18 @@
 let config = {
     parent: 'phaser-game',
     type: Phaser.AUTO,
+
+    scale: {
+        mode: Phaser.Scale.RESIZE,
+        autoCenter: Phaser.Scale.CENTER_BOTH,
+        width: window.innerWidth,
+        height: window.innerHeight
+    },
+
     render: {
         pixelArt: true  // prevent pixel art from getting blurred when scaled
     },
+
     physics: {
         default: 'arcade',
         arcade: {
@@ -17,8 +26,7 @@ let config = {
             }
         }
     },
-    width: 800, //put width of map,
-    height: 600, //put height of map,
+
     scene: [StartScreen, Platformer]
 }
 
