@@ -9,7 +9,7 @@ class StartScreen extends Phaser.Scene {
 
     preload() {
         this.load.image("startBackground", "./assets/StartBackround.png"); //Start image
-        this.load.bitmapFont("Runescape", "./assets/Runescape.png", "./assets/Runescape.xml");
+        this.load.bitmapFont("Runescape", "./assets/Pixelta.png", "./assets/Pixelta.xml");
 
     //where you initualize assets
     }
@@ -29,8 +29,8 @@ class StartScreen extends Phaser.Scene {
     
         // DISPLAY XML FONT: Use add.bitmapText instead of add.text
         // Parameters: (x, y, fontKey, textString, fontSize)
-        this.titleText = this.add.bitmapText(580, 160, "Runescape", "CORE", 200);
-        
+        this.titleText = this.add.bitmapText(560, 160, "Runescape", "CORE", 200);
+
         const buttons = this.add.graphics();
         buttons.fillStyle(0xFEDC56, 1);
 
