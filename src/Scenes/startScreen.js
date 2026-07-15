@@ -8,24 +8,47 @@ class StartScreen extends Phaser.Scene {
     }
 
     preload() {
+        this.load.image("startBackground", "./assets/StartBackround.png"); //Start image
+
+
     //where you initualize assets
     }
 
     create() {
-    //normal code
-            this.add.text(
-                this.scale.width / 2,
-                this.scale.height / 6,
-                "Stone Age: Core", 
-        
-                {
-                    fontFamily: "Runescape UF",
-                    fontSize: "72px",
-                    color: "#84a5ed"
+        this.background = this.add.image(
+            this.scale.width / 2,
+            this.scale.height / 2,
+            "startBackground"
+        );
 
-                }
-            ).setOrigin(0.5);
+        this.background.setOrigin(0.5);
+
+        this.resizeBackground(this.scale.width, this.scale.height);
+
+        this.scale.on("resize", this.handleResize, this);
+    
+    
+    
     }
+
+    resizeBackground(width, height) {
+      const scaleX = width / this.background.width;
+      const scaleY = height / this.background.height;
+
+      // Use the larger scale so the background covers the window.
+      const scale = Math.max(scaleX, scaleY);
+
+      this.background
+         .setPosition(width / 2, height / 2)
+         .setScale(scale);
+   }
+
+    handleResize(gameSize) {
+      const width = gameSize.width;
+      const height = gameSize.height;
+
+      this.resizeBackground(width, height);
+   }
 
     update() {
     //code that runs 60 times a second
