@@ -9,7 +9,7 @@ class StartScreen extends Phaser.Scene {
 
     preload() {
         this.load.image("startBackground", "./assets/StartBackround.png"); //Start image
-
+        this.load.bitmapFont("Runescape", "./assets/Runescape.png", "./assets/Runescape.xml");
 
     //where you initualize assets
     }
@@ -27,6 +27,10 @@ class StartScreen extends Phaser.Scene {
 
         this.scale.on("resize", this.handleResize, this);
     
+        // DISPLAY XML FONT: Use add.bitmapText instead of add.text
+        // Parameters: (x, y, fontKey, textString, fontSize)
+        this.titleText = this.add.bitmapText(580, 160, "Runescape", "CORE", 200);
+        
         const buttons = this.add.graphics();
         buttons.fillStyle(0xFEDC56, 1);
 
@@ -48,19 +52,6 @@ class StartScreen extends Phaser.Scene {
             80
         );
 
-        // Game Title
-        this.add.text(
-            this.scale.width / 2,
-            this.scale.height / 6,
-            "Stone Age: Core", 
-        
-            {
-                fontFamily: "Runescape UF",
-                fontSize: "72px",
-                color: "#84a5ed"
-
-            }
-        ).setOrigin(0.5);
     }
     
 
