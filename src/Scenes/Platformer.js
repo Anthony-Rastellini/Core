@@ -13,10 +13,10 @@ class Platformer extends Phaser.Scene {
 
     create() {
     //normal code
-    this.add.text(100, 100, "RuneScape UF"), {
-        fontSize: "16px",
-        color: "#ffffff"
-    }
+        this.add.text(100, 100, "RuneScape UF"), {
+            fontSize: "16px",
+            color: "#ffffff"
+        }
 
     }
 
