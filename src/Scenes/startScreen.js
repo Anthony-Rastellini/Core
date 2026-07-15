@@ -8,7 +8,7 @@ class StartScreen extends Phaser.Scene {
     }
 
     preload() {
-        this.load.image("startBackground", "./assets/StartBackround.png"); //Start image
+        this.load.image("startBackground", "./assets/StartScreen.png"); //Start image
         this.load.bitmapFont("Runescape", "./assets/Pixelta.png", "./assets/Pixelta.xml");
 
     //where you initualize assets
