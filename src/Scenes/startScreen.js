@@ -31,27 +31,31 @@ class StartScreen extends Phaser.Scene {
         // Parameters: (x, y, fontKey, textString, fontSize)
         this.titleText = this.add.bitmapText(560, 160, "Runescape", "CORE", 200);
 
-        const buttons = this.add.graphics();
-        buttons.fillStyle(0xFEDC56, 1);
-
-        buttons.fillRect(
-            // X and Y Coords
-            this.scale.width / 2 - 180,
-            this.scale.height / 2 + 180,
-            // Width & Height
-            300,
-            80
-        );
-
-        buttons.lineStyle(4, 0x000000, 1);
-
-        buttons.strokeRect(
-            this.scale.width / 2 - 180,
+        const startButton = this.add.rectangle(
+            this.scale.width / 2,
             this.scale.height / 2 + 180,
             300,
-            80
-        );
+            80,
+            0xFEDC56
+        )
 
+        startButton.setStrokeStyle(4, 0x000000);
+        startButton.setInteractive();
+
+        const startButtonText = this.add.text(
+            this.scale.width / 2,
+            this.scale.height / 2 + 180,
+            "Begin",
+            {
+                fontFamily: "RuneScape UF",
+                fontSize: "20px",
+                color: "#000000"
+            }
+        ).setOrigin(0.5);
+        
+        startButton.on("pointerdown", () => {
+            this.scene.start("platformerScene");
+        });
     }
     
 
@@ -75,7 +79,7 @@ class StartScreen extends Phaser.Scene {
    }
     //normal code
         
-    
+
 
     update() {
     //code that runs 60 times a second
