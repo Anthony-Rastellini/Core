@@ -1,6 +1,6 @@
 class StartScreen extends Phaser.Scene {
     constructor() {
-        super("startScene");
+        super("StartScreen");
     }
 
     init() {
@@ -13,10 +13,18 @@ class StartScreen extends Phaser.Scene {
 
     create() {
     //normal code
-    this.add.text(100, 100, "Core", {
-        fontSize: "16px",
-        color: "#84a5ed"
-    })
+            this.add.text(
+                this.scale.width / 2,
+                this.scale.height / 6,
+                "Stone Age: Core", 
+        
+                {
+                    fontFamily: "Runescape UF",
+                    fontSize: "72px",
+                    color: "#84a5ed"
+
+                }
+            ).setOrigin(0.5);
     }
 
     update() {

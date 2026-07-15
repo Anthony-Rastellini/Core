@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Platformer Starter Kit</title>
-    <script src="./lib/phaser.js"></script>
-    <script src="./src/Scenes/StartScreen.js"></script>
-    <script src="./src/Scenes/Platformer.js"></script>
-    <script src="./src/main.js"></script>
+
+    <style>
+        @font-face {
+            font-family: "Runescape UF";
+            src: url("./assets/runescape_uf.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+    </style>
+
+    <script defer src="./lib/phaser.js"></script>
+    <script defer src="./src/Scenes/StartScreen.js"></script>
+    <script defer src="./src/Scenes/Platformer.js"></script>
+    <script defer src="./src/main.js"></script>
 </head>
+
 <body>
     <div id="phaser-game"></div>
     <span id="description"></span>

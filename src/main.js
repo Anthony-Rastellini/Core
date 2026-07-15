@@ -4,6 +4,7 @@
 let config = {
     parent: 'phaser-game',
     type: Phaser.AUTO,
+    
 
     scale: {
         mode: Phaser.Scale.RESIZE,
