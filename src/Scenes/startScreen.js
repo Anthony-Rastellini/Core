@@ -27,30 +27,6 @@ class StartScreen extends Phaser.Scene {
 
         this.scale.on("resize", this.handleResize, this);
     
-    
-    
-    }
-
-    resizeBackground(width, height) {
-      const scaleX = width / this.background.width;
-      const scaleY = height / this.background.height;
-
-      // Use the larger scale so the background covers the window.
-      const scale = Math.max(scaleX, scaleY);
-
-      this.background
-         .setPosition(width / 2, height / 2)
-         .setScale(scale);
-   }
-
-    handleResize(gameSize) {
-      const width = gameSize.width;
-      const height = gameSize.height;
-
-      this.resizeBackground(width, height);
-   }
-    //normal code
-        
         const buttons = this.add.graphics();
         buttons.fillStyle(0xFEDC56, 1);
 
@@ -86,6 +62,29 @@ class StartScreen extends Phaser.Scene {
             }
         ).setOrigin(0.5);
     }
+    
+
+    resizeBackground(width, height) {
+      const scaleX = width / this.background.width;
+      const scaleY = height / this.background.height;
+
+      // Use the larger scale so the background covers the window.
+      const scale = Math.max(scaleX, scaleY);
+
+      this.background
+         .setPosition(width / 2, height / 2)
+         .setScale(scale);
+    }
+
+    handleResize(gameSize) {
+      const width = gameSize.width;
+      const height = gameSize.height;
+
+      this.resizeBackground(width, height);
+   }
+    //normal code
+        
+    
 
     update() {
     //code that runs 60 times a second
