@@ -12,12 +12,74 @@ class mapSelection extends Phaser.Scene {
     }
 
     create() {
-    //normal code
-        this.add.text(100, 100, "Maps"), {
-            fontSize: "40px",
-            color: "#ffffff"
-        }
+        //normal code
+        const panelX = 30;
+        const panelY = 30;
+        const panelWidth = this.scale.width - 60;
+        const panelHeight = this.scale.height - 60;
+        const titleSpace = 80;
 
+        this.cameras.main.setBackgroundColor(0xA0785A);
+        const mapCircle = this.add.graphics();
+        mapCircle.fillStyle(0xE8D8B8, 1);
+        mapCircle.lineStyle(4, 0x000000, 1);
+
+        mapCircle.strokeRoundedRect(
+            panelX,
+            panelY,
+            panelWidth,
+            panelHeight,
+            12
+        );
+
+        mapCircle.fillRoundedRect(
+            panelX, 
+            panelY,
+            panelWidth,
+            panelHeight,
+            12
+        );
+
+        this.add.text(
+            panelX + panelWidth / 2,
+            panelY + titleSpace / 2, 
+            "Maps",
+            {
+                fontFamily: "RuneScape UF",
+                fontSize: "36px",
+                color: "#000000"
+            }
+        ).setOrigin(0.5);
+
+        const gridY = panelY + titleSpace;
+        const gridHeight = panelHeight - titleSpace;
+        // Want 3 grids long by 2 high
+        const colWidth = panelWidth / 3;
+        const rowHeight = gridHeight /2;
+
+        mapCircle.lineBetween(
+            panelX,
+            gridY,
+            panelX + panelWidth,
+            gridY
+        );
+
+        mapCircle.lineBetween(
+            panelX,
+            gridY + rowHeight,
+            panelX + panelWidth,
+            gridY + rowHeight
+        );
+
+        for (let i = 1; i < 3; i++){
+            const x = panelX + colWidth * i;
+            mapCircle.lineBetween(
+                x,
+                gridY,
+                x,
+                gridY + gridHeight
+            );
+        }
     }
 
     update() {
