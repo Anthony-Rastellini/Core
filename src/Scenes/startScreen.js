@@ -31,84 +31,17 @@ class StartScreen extends Phaser.Scene {
         // Parameters: (x, y, fontKey, textString, fontSize)
         this.titleText = this.add.bitmapText(560, 160, "Runescape", "CORE", 200);
 
-        const startButton = this.add.rectangle(
-            this.scale.width / 2,
-            this.scale.height / 2 + 180,
-            400,
-            70,
-            0xFEDC56
-        )
+        this.roundedButton(20, 20, 130, 50, "Maps", () =>{
+            this.scene.start("mapSelection")
+        })
 
-        startButton.setStrokeStyle(4, 0x000000);
-        startButton.setInteractive();
+        this.roundedButton(this.scale.width - 150, 20, 130, 50, "Settings", () => {
+            this.scene.start("settingsPage")
+        })
 
-        const startButtonText = this.add.text(
-            this.scale.width / 2,
-            this.scale.height / 2 + 180,
-            "Begin",
-            {
-                fontFamily: "RuneScape UF",
-                fontSize: "20px",
-                color: "#000000"
-            }
-        ).setOrigin(0.5);
-        
-        startButton.on("pointerdown", () => {
-            this.scene.start("platformerScene");
-        });
-
-        const settingsButton = this.add.rectangle(
-            // X, Y, Width, Height, Color
-            this.scale.width - 85,
-            30,
-            160,
-            50,
-            0xFEDC56
-        );
-
-        settingsButton.setStrokeStyle(3, 0x000000)
-        settingsButton.setInteractive();
-
-        this.add.text(
-            this.scale.width - 85,
-            30,
-            "Settings",
-            {
-                fontFamily: "RuneScape UF",
-                fontSize: "20px",
-                color: "#000000"
-            }
-        ).setOrigin(0.5);
-
-        settingsButton.on("pointerdown", () => {
-            this.scene.start("settingsPage");
-        });
-
-        const mapButton = this.add.rectangle(
-            this.scale. width / 2 - 640, 
-            this.scale.height / 2 + 50,
-            200,
-            70,
-            0xFEDC56
-        )
-
-        mapButton.setStrokeStyle(3, 0x000000)
-        mapButton.setInteractive();
-
-        this.add.text(
-            this.scale.width / 2 - 640,
-            this.scale.height / 2 + 50,
-            "Maps",
-            {
-                fontFamily: "RuneScape UF",
-                fontSize: "20px",
-                color: "#000000"
-            }
-        ).setOrigin(0.5);
-
-        mapButton.on("pointerdown", () => {
-            this.scene.start("mapSelection");
-        });
+        this.roundedButton(this.scale.width / 2 - 150, 420, 300, 80, "Begin", () => {
+            this.scene.start("platformerScene")
+        })
     }
     
 
@@ -132,7 +65,36 @@ class StartScreen extends Phaser.Scene {
    }
     //normal code
         
+   roundedButton(x, y, width, height, text, callback) {
+      const button = this.add.graphics();
 
+      button.fillStyle(0xFEDC56, 1);
+      button.fillRoundedRect(x, y, width, height, 15);
+      button.lineStyle(3, 0x000000, 1);
+      button.strokeRoundedRect(x, y, width, height, 15);
+
+      const range = this.add.rectangle(
+        x + width / 2,
+        y + height / 2,
+        width,
+        height,
+        0x000000,
+        0
+      ).setInteractive()
+
+      this.add.text(
+        x + width /2,
+        y + height /2,
+        text,
+        {
+            fontFamily: "RuneScape UF",
+            fontSize: "26px",
+            color: "#000000"
+        }
+      ).setOrigin(0.5);
+
+      range.on("pointerdown", callback);
+   }
 
     update() {
     //code that runs 60 times a second
