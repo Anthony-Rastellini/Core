@@ -19,7 +19,7 @@ class mapSelection extends Phaser.Scene {
         const panelHeight = this.scale.height - 60;
         const titleSpace = 80;
 
-        this.cameras.main.setBackgroundColor(0x3B2416);
+        this.cameras.main.setBackgroundColor(0x9C7657);
         const mapCircle = this.add.graphics();
         mapCircle.fillStyle(0xE9D7AF, 1);
         mapCircle.lineStyle(4, 0x3B2416, 1);
