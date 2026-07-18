@@ -19,10 +19,10 @@ class mapSelection extends Phaser.Scene {
         const panelHeight = this.scale.height - 60;
         const titleSpace = 80;
 
-        this.cameras.main.setBackgroundColor(0xFFD95A);
+        this.cameras.main.setBackgroundColor(0x3B2416);
         const mapCircle = this.add.graphics();
-        mapCircle.fillStyle(0xD66D36, 1);
-        mapCircle.lineStyle(4, 0x1F1A17, 1);
+        mapCircle.fillStyle(0xE9D7AF, 1);
+        mapCircle.lineStyle(4, 0x3B2416, 1);
 
         mapCircle.strokeRoundedRect(
             panelX,
@@ -47,7 +47,7 @@ class mapSelection extends Phaser.Scene {
             {
                 fontFamily: "RuneScape UF",
                 fontSize: "36px",
-                color: "#1F1A17"
+                color: "#2A1B12"
             }
         ).setOrigin(0.5);
 
