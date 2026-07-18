@@ -1,6 +1,6 @@
-class mapSelection extends Phaser.Scene {
+class mapSelectorOne extends Phaser.Scene {
     constructor() {
-        super("mapSelection");
+        super("mapSelectorOne");
     }
 
     init() {
@@ -80,7 +80,56 @@ class mapSelection extends Phaser.Scene {
                 gridY + gridHeight
             );
         }
+
+        this.roundedButton(
+            panelX + panelWidth / 2 - 700,
+            panelY + titleSpace / 2 - 20,
+            150,
+            45,
+            "Back to Start",
+            () => this.scene.start("StartScreen")
+        );
+
+        this.roundedButton(
+            panelX + panelWidth / 2 + 550,
+            panelY + titleSpace / 2 - 20,
+            150,
+            45,
+            "Next Page",
+            () => this.scene.start("mapSelectorTwo")
+        );
     }
+
+    roundedButton(x, y, width, height, text, callback) {
+      const button = this.add.graphics();
+
+      button.fillStyle(0xD6B47A, 1);
+      button.fillRoundedRect(x, y, width, height, 15);
+      button.lineStyle(3, 0x000000, 1);
+      button.strokeRoundedRect(x, y, width, height, 15);
+
+      const range = this.add.rectangle(
+        x + width / 2,
+        y + height / 2,
+        width,
+        height,
+        0x000000,
+        0
+      ).setInteractive()
+
+      this.add.text(
+        x + width /2,
+        y + height /2,
+        text,
+        {
+            fontFamily: "RuneScape UF",
+            fontSize: "20px",
+            color: "#000000"
+        }
+      ).setOrigin(0.5);
+
+      range.on("pointerdown", callback);
+   }
 
     update() {
     //code that runs 60 times a second

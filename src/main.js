@@ -31,7 +31,8 @@ let config = {
     scene: [
         StartScreen, 
         Platformer,
-        mapSelection,
+        mapSelectorOne,
+        mapSelectorTwo,
         settingsPage
     ]
 }

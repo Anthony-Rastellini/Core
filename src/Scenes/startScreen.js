@@ -32,7 +32,7 @@ class StartScreen extends Phaser.Scene {
         this.titleText = this.add.bitmapText(560, 160, "Runescape", "CORE", 200);
 
         this.roundedButton(20, 20, 130, 50, "Maps", () =>{
-            this.scene.start("mapSelection")
+            this.scene.start("mapSelectorOne")
         })
 
         this.roundedButton(this.scale.width - 150, 20, 130, 50, "Settings", () => {
@@ -68,7 +68,7 @@ class StartScreen extends Phaser.Scene {
    roundedButton(x, y, width, height, text, callback) {
       const button = this.add.graphics();
 
-      button.fillStyle(0xFEDC56, 1);
+      button.fillStyle(0xD6B47A, 1);
       button.fillRoundedRect(x, y, width, height, 15);
       button.lineStyle(3, 0x000000, 1);
       button.strokeRoundedRect(x, y, width, height, 15);
