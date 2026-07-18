@@ -28,7 +28,12 @@ let config = {
         }
     },
 
-    scene: [StartScreen, Platformer]
+    scene: [
+        StartScreen, 
+        Platformer,
+        mapSelection,
+        settingsPage
+    ]
 }
 
 var cursors;

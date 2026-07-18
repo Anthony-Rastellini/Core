@@ -34,8 +34,8 @@ class StartScreen extends Phaser.Scene {
         const startButton = this.add.rectangle(
             this.scale.width / 2,
             this.scale.height / 2 + 180,
-            300,
-            80,
+            400,
+            70,
             0xFEDC56
         )
 
@@ -55,6 +55,59 @@ class StartScreen extends Phaser.Scene {
         
         startButton.on("pointerdown", () => {
             this.scene.start("platformerScene");
+        });
+
+        const settingsButton = this.add.rectangle(
+            // X, Y, Width, Height, Color
+            this.scale.width - 85,
+            30,
+            160,
+            50,
+            0xFEDC56
+        );
+
+        settingsButton.setStrokeStyle(3, 0x000000)
+        settingsButton.setInteractive();
+
+        this.add.text(
+            this.scale.width - 85,
+            30,
+            "Settings",
+            {
+                fontFamily: "RuneScape UF",
+                fontSize: "20px",
+                color: "#000000"
+            }
+        ).setOrigin(0.5);
+
+        settingsButton.on("pointerdown", () => {
+            this.scene.start("settingsPage");
+        });
+
+        const mapButton = this.add.rectangle(
+            this.scale. width / 2 - 640, 
+            this.scale.height / 2 + 50,
+            200,
+            70,
+            0xFEDC56
+        )
+
+        mapButton.setStrokeStyle(3, 0x000000)
+        mapButton.setInteractive();
+
+        this.add.text(
+            this.scale.width / 2 - 640,
+            this.scale.height / 2 + 50,
+            "Maps",
+            {
+                fontFamily: "RuneScape UF",
+                fontSize: "20px",
+                color: "#000000"
+            }
+        ).setOrigin(0.5);
+
+        mapButton.on("pointerdown", () => {
+            this.scene.start("mapSelection");
         });
     }
     
