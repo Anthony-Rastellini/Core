@@ -40,7 +40,7 @@ class StartScreen extends Phaser.Scene {
         })
 
         this.roundedButton(this.scale.width / 2 - 150, 420, 300, 80, "Begin", () => {
-            this.scene.start("platformerScene")
+            this.scene.start("Map1")
         })
     }
     

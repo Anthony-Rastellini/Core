@@ -33,6 +33,8 @@ let config = {
         Platformer,
         mapSelectorOne,
         mapSelectorTwo,
+        Map1,
+        mapSelection,
         settingsPage
     ]
 }
