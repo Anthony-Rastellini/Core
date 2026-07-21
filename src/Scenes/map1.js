@@ -10,13 +10,26 @@ class Map1 extends Phaser.Scene {
         this.load.setPath("./assets/");
 
         this.load.image(
-            "detail_tiles",
-            "TX Village Props.png"
+            "backround1",
+            "background_day1.png"
+        );
+        this.load.image(
+            "backround2",
+            "background_day3.png"
+        );
+        this.load.image(
+            "backround3",
+            "background_day4D.png"
         );
 
         this.load.image(
             "map_tiles",
-            "TX Tileset Ground.png"
+            "MainLevBuild.png"
+        );
+
+        this.load.image(
+            "decoration_tiles",
+            "Decoratives.png"
         );
 
         this.load.tilemapTiledJSON(
@@ -32,78 +45,126 @@ class Map1 extends Phaser.Scene {
             key: "start_level"
         });
 
-        const detailTiles = map.addTilesetImage(
-            "Detail",
-            "detail_tiles"
+        // Exact names from Tiled
+        const background1Tiles = map.addTilesetImage(
+            "Backround1",
+            "backround1"
+        );
+
+        const background2Tiles = map.addTilesetImage(
+            "Backround 3 Mountins",
+            "backround2"
+        );
+
+        const background3Tiles = map.addTilesetImage(
+            "Backround",
+            "backround3"
+        );
+
+        const decorationTiles = map.addTilesetImage(
+            "Items and Trees",
+            "decoration_tiles"
         );
 
         const groundTiles = map.addTilesetImage(
-            "Ground",
+            "Main Level Ground",
             "map_tiles"
         );
 
-        if (!detailTiles || !groundTiles) {
-            console.error(
-                "Could not connect the Tiled tilesets."
-            );
-            return;
-        }
-
         const tilesets = [
-            groundTiles,
-            detailTiles
+            background1Tiles,
+            background2Tiles,
+            background3Tiles,
+            decorationTiles,
+            groundTiles
         ];
 
-        this.behindLayer = map.createLayer(
-            "Behind",
+        // Exact layer names from Tiled
+        this.backround2 = map.createLayer(
+            "Backround2",
             tilesets,
             0,
             0
         );
 
-        this.backgroundLayer = map.createLayer(
-            "Background",
+        this.backround3 = map.createLayer(
+            "Backround 3",
             tilesets,
             0,
             0
         );
 
-        this.background2Layer = map.createLayer(
-            "Background2",
+        this.backround = map.createLayer(
+            "Backround",
             tilesets,
             0,
             0
         );
 
-        this.background3Layer = map.createLayer(
-            "Background 3",
+        this.tree3 = map.createLayer(
+            "Tree 3",
             tilesets,
             0,
             0
         );
 
-        this.buildingsLayer = map.createLayer(
-            "Buildings",
+        this.trees2 = map.createLayer(
+            "Trees 2",
             tilesets,
             0,
             0
         );
 
-        this.logsLayer = map.createLayer(
-            "Logs",
+        this.trees1 = map.createLayer(
+            "Trees 1",
             tilesets,
             0,
             0
         );
 
-        this.groundLayer = map.createLayer(
-            "Ground",
+        this.groundDetail = map.createLayer(
+            "Ground Detail",
             tilesets,
             0,
             0
         );
 
-        this.foregroundLayer = map.createLayer(
+        this.shrubs1 = map.createLayer(
+            "Shrubs 1",
+            tilesets,
+            0,
+            0
+        );
+
+        this.newGround = map.createLayer(
+            "New Ground",
+            tilesets,
+            0,
+            0
+        );
+
+        this.grass = map.createLayer(
+            "Grass",
+            tilesets,
+            0,
+            0
+        );
+
+        this.mushroomsAndFlowers = map.createLayer(
+            "Mushrooms and Flowers",
+            tilesets,
+            0,
+            0
+        );
+
+        this.rocks = map.createLayer(
+            "Rocks",
+            tilesets,
+            0,
+            0
+        );
+
+        this.foreground = map.createLayer(
             "Foreground",
             tilesets,
             0,

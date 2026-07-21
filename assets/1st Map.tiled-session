@@ -2,15 +2,49 @@
     "activeFile": "",
     "expandedProjectPaths": [
     ],
+    "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
+        "": {
+            "scaleInDock": 1
+        },
+        "1st Map.tmj": {
+            "scale": 0.33,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1039.3939393939395,
+                "y": 557.5757575757577
+            }
+        },
+        "1st Map.tmj#Detail": {
+            "scaleInDock": 0.9818
+        },
+        "1st Map.tmj#Ground": {
+            "scaleInDock": 0.9206
+        },
+        "1st Map.tmx": {
+            "scale": 0.8,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 443.75,
+                "y": 475
+            }
+        },
+        "1st Map.tmx#Detail": {
+            "scaleInDock": 1
+        },
+        "1st Map.tmx#Ground": {
+            "scaleInDock": 1
+        }
     },
-    "last.imagePath": "/Users/anthonyrastellini/Downloads/Pixel Art Platformer - Village Props v2.3.1/Texture",
+    "last.imagePath": "/Users/anthonyrastellini/Downloads/SSWorlds_SET1_v1.0/_PNG/background",
     "map.lastUsedFormat": "json",
     "map.width": 90,
     "openFiles": [
     ],
     "project": "1st Map.tiled-project",
     "recentFiles": [
+        "1st Map.tmx",
+        "1st Map.tmj"
     ],
     "tileset.embedInMap": true
 }
