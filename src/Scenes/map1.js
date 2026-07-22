@@ -101,6 +101,13 @@ class Map1 extends Phaser.Scene {
             0
         );
 
+        this.backround = map.createLayer(
+            "Backround 1/2",
+            tilesets,
+            0,
+            0
+        );
+
         this.tree3 = map.createLayer(
             "Tree 3",
             tilesets,
@@ -171,9 +178,11 @@ class Map1 extends Phaser.Scene {
             0
         );
 
+//=================Camera=====================
+
         this.cameras.main.setBounds(
             0,
-            0,
+            250,
             map.widthInPixels / 3,
             map.heightInPixels 
         );
